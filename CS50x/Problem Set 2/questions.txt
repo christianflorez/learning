@@ -1,0 +1,14 @@
+P Set Questions:
+
+How does a while loop differ from a do-while loop? When is the latter particularly useful?
+- A do-while loop runs AT LEAST once and checks the condition AFTER the body of the loop. For example, if you want to check the input of a user and have it loop until the user provides a positive input, a do-while loop works very well for this, since the first time the loop runs, the user hasn't given an input yet, so the condition can't be checked initially.
+
+What does undeclared identifier usually indicate if outputted by make (or, really, clang)?
+This is what happens when you try to use a variable that has not yet been declared. 
+
+Why is Caesar’s cipher not very secure?
+A computer can simply work to shift the letters in 25 different manners and will quickly deliver a result. Moreover, there are very obvious patterns within the encrypted text (such as repeating vowels like e in words like "meet") which in a sense, gives away the pattern of the cipher and the underlying text.
+
+What’s a function?
+
+Why bother writing functions when you can just copy and paste code as needed?

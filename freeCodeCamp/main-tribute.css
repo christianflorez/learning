@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto', sans-serif;
+	background-color: #806260;
+}
+.jumbotron {
+  background-color: #806260;
+}
+.jumbotron h1 {
+  color: #492321;
+}
+.jumbotron h2 {
+  color: #492321;
+}
+#photo-block {
+	background-color: #EEE;
+}
+#main-content {
+	background-color: #D3B8B6;
+}
+#caption {
+	font-size: 16px;
+}
