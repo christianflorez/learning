@@ -1,0 +1,9 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+0. The framework allows for dimensions between DIM_MIN and DIM_MAX, which are 3 and 9, respectively.
+1. Near the top of the entire program, int board[DIM_MAX][DIM_MAX] is declared, which means that the game's board is a 3D array.
+2. A function named greet(); is called to greet the player at the beginning.
+3. init();, draw();, move();, and won(); all need to be implemented.
