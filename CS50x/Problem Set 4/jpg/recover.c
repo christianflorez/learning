@@ -56,19 +56,12 @@ int main(void)
     }
     
     // Searches for first JPG header
-    bool jpg_found = false;
-    while (jpg_found == false)
+    while (is_jpeg(jpg) == false)
     {
-        if (is_jpeg(jpg))
-        {
-            jpg_found = true;
-            fwrite(&jpg, sizeof(JPEGBLOCK), 1, outptr);
-        }
-        else
-        {
-            fread(&jpg, sizeof(JPEGBLOCK), 1, card);
-        }
+        fread(&jpg, sizeof(JPEGBLOCK), 1, card);
     }
+    
+    fwrite(&jpg, sizeof(JPEGBLOCK), 1, outptr);
     
     
     // Loops over card.raw and to write .jpg files
