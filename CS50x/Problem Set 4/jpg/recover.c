@@ -55,6 +55,7 @@ int main(void)
         return 2;
     }
     
+    // Searches for first JPG header
     bool jpg_found = false;
     while (jpg_found == false)
     {
