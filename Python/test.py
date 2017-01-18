@@ -1,15 +1,61 @@
-def saltytits(myname):
-    myname = myname.lower()
-    if myname == str("todd"):
-        print ("Nice my dude man")
-    elif myname == "turtle":
-        print ("Bro no way, you're a fricking turtle? Nice dude...")
-    elif len(myname) <= 0:
-        print ("What's that bro? I couldn't hear ya...")
-    else:
-        print ("Nah dude, totes lame")
-    return myname
+db.execute("INSERT INTO orders (id, symbol, name, shares, price, timestamp) VALUES (:id, :symbol, :name, :shares, :price, :timestamp)",
+            id=session["user_id"],
+            symbol=stock_info["symbol"],
+            name=stock_info["name"],
+            shares=shares_to_buy,
+            price=stock_info["price"],
+            timestamp=str(datetime.now())
+            )
 
-print ("Sup Bro")
-enteredname = input("Dude like, what's your name brah?")
-saltytits(enteredname)
+db.execute("INSERT INTO orders (id, symbol, name, shares, price, timestamp) VALUES (:id, :symbol, :name, :shares, :price, :timestamp)",
+            id=session["user_id"],
+            symbol=stock_info["symbol"],
+            name=stock_info["name"],
+            shares=shares_to_buy,
+            price=stock_info["price"],
+            timestamp=str(datetime.now())
+            )
+
+db.execute("INSERT INTO orders (id, symbol, name, shares, price, timestamp) VALUES (:id, :symbol, :name, :shares, :price, :timestamp)",
+            id=session["user_id"],
+            symbol=stock_info["symbol"],
+            name=stock_info["name"],
+            shares=-(shares_to_sell),
+            price=stock_info["price"],
+            timestamp=str(datetime.now())
+            )
+
+db.execute("INSERT INTO orders (id, symbol, name, shares, price, timestamp) VALUES (:id, :symbol, :name, :shares, :price, :timestamp)",
+            id=session["user_id"],
+            symbol=stock_info["symbol"],
+            name=stock_info["name"],
+            shares=-(shares_to_sell),
+            price=stock_info["price"],
+            timestamp=str(datetime.now())
+            )
+
+def save_order(stock, amount):
+    db.execute("INSERT INTO orders (id, symbol, name, shares, price, timestamp) VALUES (:id, :symbol, :name, :shares, :price, :timestamp)",
+            id=session["user_id"],
+            symbol=stock["symbol"],
+            name=stock["name"],
+            shares=amount,
+            price=stock["price"],
+            timestamp=str(datetime.now())
+            )
+
+def update_portfolio(mode, stock, amount):
+    if mode == "create":
+        db.execute("INSERT INTO portfolio (id, symbol, name, shares, price) VALUES (:id, :symbol, :name, :shares, :price)",
+                       id=session["user_id"],
+                       symbol=stock["symbol"],
+                       name=stock["name"],
+                       shares=amount,
+                       price=stock["price"]
+                       )  
+    elif mode == "update":
+        db.execute("UPDATE portfolio SET shares = shares + :shares WHERE (id = :id AND symbol = :symbol)",
+                   shares=amount,
+                   id=session["user_id"],
+                   symbol=stock["symbol"]
+                   )  

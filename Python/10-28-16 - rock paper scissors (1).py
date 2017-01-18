@@ -4,30 +4,30 @@ handAi = ["Rock", "Paper", "Scissors"]
 
 def thegame(userinput):
     """This is the main code for the game."""
-    computerHand = random.choice(handAi)
+    computer_hand = random.choice(handAi)
     if userinput == "rock":
-        print "The computer chooses " + str(computerHand.lower()) + "."
-        if computerHand == "Rock":
+        print "The computer chooses " + str(computer_hand.lower()) + "."
+        if computer_hand == "Rock":
             print "Tie!"
-        elif computerHand == "Scissors":
+        elif computer_hand == "Scissors":
             print "Rock smashes scissors, you win!"
-        elif computerHand == "Paper":
+        elif computer_hand == "Paper":
             print "Paper covers rock, you lose!"
     elif userinput == "paper":
-        print "The computer chooses " + str(computerHand.lower()) + "."
-        if computerHand == "Rock":
+        print "The computer chooses " + str(computer_hand.lower()) + "."
+        if computer_hand == "Rock":
             print "Paper covers rock, you win!"
-        elif computerHand == "Scissors":
+        elif computer_hand == "Scissors":
             print "Scissors cuts paper, you lose!"
-        elif computerHand == "Paper":
+        elif computer_hand == "Paper":
             print "Tie!"
     elif userinput == "scissors":
-        print "The computer chooses " + str(computerHand.lower()) + "."
-        if computerHand == "Rock":
+        print "The computer chooses " + str(computer_hand.lower()) + "."
+        if computer_hand == "Rock":
             print "Rock smashes scissors, you lose!"
-        elif computerHand == "Scissors":
+        elif computer_hand == "Scissors":
             print "Tie!"
-        elif computerHand == "Paper":
+        elif computer_hand == "Paper":
             print "Scissors cuts paper, you win!"
     else:
         print "Try again!"
