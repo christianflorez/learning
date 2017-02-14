@@ -66,11 +66,24 @@ $(function(){
     .fail(errorMessage)
 
     // Updates HTML with new quote when "#get-quote" button is clicked
+    // This queries the Forismatic API, which returns a new quote everytime it's queried using the parameters included below
+    // for more information, see the following link: http://forismatic.com/en/api/
     $("#get-quote").click( function() {
         $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?")
         .done(newQuote)
         .fail(errorMessage)
     });
+
+    // Also updates HTML by pressing spacebar
+    // http://stackoverflow.com/questions/6199038/javascript-event-triggered-by-pressing-space
+    $(window).keypress(function (e) {
+        if (e.keyCode === 0 || e.keyCode === 32) {
+            e.preventDefault()
+            $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?")
+            .done(newQuote)
+            .fail(errorMessage)
+        }
+    })
 });
 
 function newQuote (data, textStatus, jqXHR) {
