@@ -80,15 +80,15 @@ function changeColors () {
     var seed = parseInt(Math.random() * 10);
     $(".jumbotron-fluid, .btn").animate({
         backgroundColor: colors[seed]["background"]
-        }
+        },{queue:false}, 1000
     );
     $(".container").animate({
         backgroundColor: colors[seed]["container"]
-        }
+        }, 1000
     );
     $("p, blockquote footer, .btn, a:link, a:visited, a:hover, a:active, a").animate({
         color: colors[seed]["font"]
-        }
+        }, 1000
     );   
 }
 
